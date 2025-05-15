@@ -33,10 +33,10 @@ pip install -r requirements.txt
 - Create a .env file in the root directory.
 - Add the following variables:
   
-OPENAI_API_KEY=<your-openai-api-key>
-SF_USERNAME=<your-salesforce-username>
-SF_PASSWORD=<your-salesforce-password>
-SF_TOKEN=<your-salesforce-security-token>
+OPENAI_API_KEY=<XYZ>
+SF_USERNAME=<XYZ>
+SF_PASSWORD=<XYZ>
+SF_TOKEN=<XYZ>
 
 Usage
 1. Run the Streamlit application:
