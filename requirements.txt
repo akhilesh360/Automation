@@ -1,12 +1,10 @@
 streamlit
 langchain
 openai
-fitz (PyMuPDF)
 faiss-cpu
 requests
 PyMuPDF
 langchain_community
 python-dotenv
 tiktoken
-faiss-cpu
 simple-salesforce
