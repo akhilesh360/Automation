@@ -1,11 +1,17 @@
 import os
-from dotenv import load_dotenv
+import streamlit as st
 from langchain.chat_models import ChatOpenAI
 from langchain.chains import LLMChain
 from langchain.prompts import PromptTemplate
 
-load_dotenv()
-llm = ChatOpenAI(model_name="gpt-4", temperature=0.3, openai_api_key=os.getenv("OPENAI_API_KEY"))
+# ✅ Get key from Streamlit secrets first, fallback to local .env if needed
+openai_key = st.secrets.get("OPENAI_API_KEY", os.getenv("OPENAI_API_KEY"))
+
+llm = ChatOpenAI(
+    model_name="gpt-4",
+    temperature=0.3,
+    openai_api_key=openai_key
+)
 
 def summarize_text(text):
     prompt = PromptTemplate(
