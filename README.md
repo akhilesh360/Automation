@@ -32,6 +32,7 @@ pip install -r requirements.txt
 3. Set up environment variables:
 - Create a .env file in the root directory.
 - Add the following variables:
+  
 OPENAI_API_KEY=<your-openai-api-key>
 SF_USERNAME=<your-salesforce-username>
 SF_PASSWORD=<your-salesforce-password>
