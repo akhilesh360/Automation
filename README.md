@@ -33,10 +33,10 @@ pip install -r requirements.txt
 - Create a .env file in the root directory.
 - Add the following variables:
   
-OPENAI_API_KEY=<XYZ>
-SF_USERNAME=<XYZ>
-SF_PASSWORD=<XYZ>
-SF_TOKEN=<XYZ>
+- **OPENAI_API_KEY=** <XYZ>
+- **SF_USERNAME=<XYZ>**
+- **SF_PASSWORD=<XYZ>**
+- **SF_TOKEN=<XYZ>**
 
 Usage
 1. Run the Streamlit application:
@@ -55,15 +55,16 @@ Query the document using the chatbot.
 Dependencies
 The project requires the following Python libraries (see requirements.txt for details):
 
-streamlit
-langchain
-openai
-fitz (PyMuPDF)
-faiss-cpu
-requests
-python-dotenv
-simple-salesforce
-License
+- streamlit
+- langchain
+- openai
+- fitz (PyMuPDF)
+- faiss-cpu
+- requests
+- python-dotenv
+- simple-salesforce
+
+## License
 This project is licensed under the MIT License. See the LICENSE file for details.
 
 Acknowledgments
