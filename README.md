@@ -6,19 +6,37 @@
 
 # AI Document Intelligence System
 
+View live demo: https://automation-ddwvwyexfe56f6s6bcowz5.streamlit.app/
+
+![Flowcharts](https://github.com/user-attachments/assets/2c8a73fc-0756-43c9-8067-57e7aa3d0c33)
+
 This project is an AI-powered document intelligence system built with Streamlit. It processes PDF documents to extract text, summarize content, classify categories, analyze sentiment, and provide actionable insights. It also integrates with external services like Zapier and Salesforce for workflow automation.
 
-View live demo: https://automation-ddwvwyexfe56f6s6bcowz5.streamlit.app/
+
+
+
 
 ## Features
 
-- **PDF Text Extraction**: Extracts text from uploaded PDF documents.
+- **PDF Text Extraction**: Extracts text from uploaded PDF documents. <img width="1077" alt="Screenshot 2025-05-15 at 7 55 08 AM" src="https://github.com/user-attachments/assets/ab0c3055-f50d-4f58-8af9-8226f3007bb9" />
+
+  
 - **Summarization**: Generates a concise summary, key points, and recommended actions.
-- **Sentiment Analysis**: Analyzes the sentiment of the document (Positive, Neutral, or Negative).
+- **Sentiment Analysis**: Analyzes the sentiment of the document (Positive, Neutral, or Negative).<img width="1077" alt="Screenshot 2025-05-15 at 7 55 19 AM" src="https://github.com/user-attachments/assets/647b0bb8-0893-4c86-ac76-cb08aa7b748f" />
 - **Category Classification**: Classifies the document into predefined categories (e.g., HR, Finance, Legal, etc.).
+
+
 - **Zapier Integration**: Sends extracted insights to a Zapier webhook.
-- **Salesforce Integration**: Creates tasks in Salesforce with the extracted insights.
-- **AI Chatbot**: Allows users to query the document using an AI-powered chatbot.
+<img width="717" alt="Screenshot 2025-05-15 at 7 56 39 AM" src="https://github.com/user-attachments/assets/901e3ccc-495e-4be5-b1f6-97c1ba360c99" />
+
+
+- **Salesforce Integration**: Creates tasks in Salesforce with the extracted insights. <img width="1082" alt="Screenshot 2025-05-15 at 7 58 27 AM" src="https://github.com/user-attachments/assets/4c0b693a-a584-4faf-8f1a-15d29542e437"/>
+- **AI Chatbot**: Allows users to query the document using an AI-powered chatbot. <img width="780" alt="Screenshot 2025-05-15 at 8 44 21 AM" src="https://github.com/user-attachments/assets/7fa709b7-22d0-4127-b864-beaa27dac2ba" />
+
+
+
+
+
 
 ## Project Structure
 
