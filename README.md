@@ -1,6 +1,14 @@
+# AI Document Intelligence
+
+[![Live Demo](https://img.shields.io/static/v1?label=Streamlit&message=Demo&color=blue)](https://automation-ddwvwyexfe56f6s6bcowz5.streamlit.app/)  
+[![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)  
+[![Python ≥3.8](https://img.shields.io/badge/python-3.8%2B-blue.svg)]()
+
 # AI Document Intelligence System
 
 This project is an AI-powered document intelligence system built with Streamlit. It processes PDF documents to extract text, summarize content, classify categories, analyze sentiment, and provide actionable insights. It also integrates with external services like Zapier and Salesforce for workflow automation.
+
+View live demo: https://automation-ddwvwyexfe56f6s6bcowz5.streamlit.app/
 
 ## Features
 
