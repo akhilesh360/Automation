@@ -1,8 +1,7 @@
 import streamlit as st
 import os
-import fitz
+import fitz  # PyMuPDF
 import datetime
-from dotenv import load_dotenv
 from app.ocr_extractor import extract_text_from_pdf
 from app.summarizer import summarize_text
 from app.classifier import classify_text
@@ -10,7 +9,11 @@ from app.router import send_to_zapier
 from app.chatbot import build_chatbot_from_text
 from app.mock_api import push_to_salesforce
 
-load_dotenv()
+# ✅ Set API keys from Streamlit secrets
+os.environ["OPENAI_API_KEY"] = st.secrets["OPENAI_API_KEY"]
+os.environ["SF_USERNAME"] = st.secrets["SF_USERNAME"]
+os.environ["SF_PASSWORD"] = st.secrets["SF_PASSWORD"]
+os.environ["SF_TOKEN"] = st.secrets["SF_TOKEN"]
 
 st.title("AI Document Intelligence System")
 
@@ -29,10 +32,12 @@ if uploaded_file:
     st.subheader("Document Metadata")
     st.write(f"Pages: {page_count}, Size: {file_size} KB, Uploaded: {upload_time}")
 
+    # Text extraction
     text = extract_text_from_pdf("temp.pdf")
     st.subheader("Extracted Text")
     st.write(text[:1000])
 
+    # Summary pipeline
     summary, key_points, action_items, sentiment = summarize_text(text)
     category = classify_text(text)
 
@@ -51,25 +56,26 @@ if uploaded_file:
     st.subheader("Category")
     st.write(category)
 
+    # Zapier webhook call
     zap_url = "https://hooks.zapier.com/hooks/catch/22929885/274mix8/"
     send_to_zapier({
-    "summary": summary,
-    "category": category,
-    "sentiment": sentiment,
-      "key_points": key_points,
-    "recommended_actions": action_items
-}, zap_url)
+        "summary": summary,
+        "category": category,
+        "sentiment": sentiment,
+        "key_points": key_points,
+        "recommended_actions": action_items
+    }, zap_url)
     st.success("Data sent to Zapier")
+
     if sentiment == "Negative" or category == "Legal":
         st.warning("Escalation Triggered: High-risk document")
-        print("ALERT: Escalation triggered")
 
-    # Salesforce Integration with Contact Email
+    # Salesforce Integration (Optional Email)
     contact_email = st.text_input("Assign to Contact Email (optional)")
     if st.button("Push to Salesforce"):
         push_to_salesforce(summary, category, contact_email)
 
-    # Document Intelligence Chatbot
+    # Chatbot interaction
     chatbot = build_chatbot_from_text([text])
     query = st.text_input("Ask something about the document")
     if query:
