@@ -1,16 +1,17 @@
-import os
 import streamlit as st
 from langchain.chat_models import ChatOpenAI
 from langchain.chains import LLMChain
 from langchain.prompts import PromptTemplate
 
-# ✅ Get key from Streamlit secrets first, fallback to local .env if needed
-openai_key = st.secrets.get("OPENAI_API_KEY", os.getenv("OPENAI_API_KEY"))
+# 🔒 Secure key access using Streamlit Secrets
+if "OPENAI_API_KEY" not in st.secrets:
+    st.error("Missing OPENAI_API_KEY in Streamlit secrets")
+    raise ValueError("OPENAI_API_KEY not found")
 
 llm = ChatOpenAI(
     model_name="gpt-4",
     temperature=0.3,
-    openai_api_key=openai_key
+    openai_api_key=st.secrets["OPENAI_API_KEY"]
 )
 
 def summarize_text(text):
@@ -36,7 +37,6 @@ def summarize_text(text):
     chain = LLMChain(llm=llm, prompt=prompt)
     output = chain.run(text)
 
-    # Parse output into segments
     summary = extract_between(output, "Summary:", "Key Points:")
     key_points = extract_between(output, "Key Points:", "Action Items:")
     action_items = extract_between(output, "Action Items:", "Sentiment:")
