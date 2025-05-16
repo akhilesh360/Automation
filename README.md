@@ -1,7 +1,6 @@
 # AI Document Intelligence
 
 [![Live Demo](https://img.shields.io/static/v1?label=Streamlit&message=Demo&color=blue)](https://automation-ddwvwyexfe56f6s6bcowz5.streamlit.app/)  
-[![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)  
 [![Python ≥3.8](https://img.shields.io/badge/python-3.8%2B-blue.svg)]()
 
 # AI Document Intelligence System
