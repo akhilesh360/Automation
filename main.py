@@ -35,7 +35,7 @@ if uploaded_file:
     # Text extraction
     text = extract_text_from_pdf("temp.pdf")
     st.subheader("Extracted Text")
-    st.write(text[:1000])
+    st.text_area("Full Extracted Text", text, height=600)
 
     # Summary pipeline
     summary, key_points, action_items, sentiment = summarize_text(text)
