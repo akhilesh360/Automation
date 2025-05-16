@@ -91,7 +91,7 @@ The project requires the following Python libraries (see requirements.txt for de
 - simple-salesforce
 
 ## License
-This project is licensed under the MIT License. See the LICENSE file for details.
+This project is licensed under the MIT License.
 
 Acknowledgments
 LangChain for LLM-based chains.
